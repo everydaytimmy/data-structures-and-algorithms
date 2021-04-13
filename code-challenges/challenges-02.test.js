@@ -36,6 +36,9 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
+  let huh = arr.map( n => n.concat('?'));
+
+  return huh;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,6 +53,9 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  let deuce = arr.map( n => Math.pow(2, n));
+
+  return deuce;
 };
 
 /* ------------------------------------------------------------------------------------------------
