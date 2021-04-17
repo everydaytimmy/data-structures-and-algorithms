@@ -38,7 +38,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => 
+const addPurchases = (arr) => arr.reduce((acc, val) => acc + val, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,7 +48,7 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => 
+const countNumberOfElements = (arr) => arr.reduce((sum, num) => sum + num, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
