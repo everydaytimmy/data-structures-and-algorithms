@@ -108,9 +108,10 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
-  // Solution code here...
-};
+const returnNames = (arr) => arr.reduce((acc, cur) => {
+  acc.push(cur.name)
+  return acc;
+}, []);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -121,7 +122,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  let string = str.split('')
+  return string.reduce((acc,cur) => {
+    return cur + acc
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
