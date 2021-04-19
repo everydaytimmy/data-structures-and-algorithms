@@ -38,7 +38,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => arr.reduce((acc, val) => acc + val, 0);
+const addPurchases = (arr) => arr.reduce((acc, val) => acc + val.purchasePrice, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,7 +48,9 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => arr.reduce((sum, num) => sum + num, 0);
+const countNumberOfElements = (arr) => arr.reduce((acc, cur) => cur === '0' ? acc: acc+=1);
+
+// one parameter
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -106,9 +108,10 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => {
-  // Solution code here...
-};
+const returnNames = (arr) => arr.reduce((acc, cur) => {
+  acc.push(cur.name)
+  return acc;
+}, []);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -119,7 +122,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  let string = str.split('')
+  return string.reduce((acc,cur) => {
+    return cur + acc
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
