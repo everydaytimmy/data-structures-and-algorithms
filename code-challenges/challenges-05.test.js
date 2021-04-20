@@ -122,9 +122,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  let string = str.split('')
+  let string = str.split('');
   return string.reduce((acc,cur) => {
-    return cur + acc
+    return cur + acc;
   }, '');
 };
 
