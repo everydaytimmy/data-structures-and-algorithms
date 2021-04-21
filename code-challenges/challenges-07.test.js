@@ -24,7 +24,10 @@ let starWarsPeople = [
   }
 ];
 
-const sortStarWarsCharacters = (starWarsArr) => starWarsArr.sort((a, b) => (a.height > b.height) ? 1 : -1);
+const sortStarWarsCharacters = (starWarsArr) => (
+  starWarsArr.sort((a, b) => (b.height - a.height)
+  ));
+
 
 
 /* ------------------------------------------------------------------------------------------------
