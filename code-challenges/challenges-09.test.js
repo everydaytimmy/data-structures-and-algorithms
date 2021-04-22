@@ -22,9 +22,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
-  // Solution code here...
-};
+const getCourseKeys = (obj) => Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -35,7 +33,11 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  let values =  Object.values(obj);
+
+  let answer = values.includes(value) ? true : false;
+
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
