@@ -8,7 +8,7 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => arr.reduce((max, cur) => cur > max ? cur : max, arr[0]);
+const maxInArray = (arr) => arr.reduce((acc, cur) => cur > acc ? cur : acc, arr[0]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -120,11 +120,7 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-  let newArray = arr.map((value) => value.house);
-
-  return newArray;
-};
+const getHouses = (arr) => arr.map((value) => value.house);
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -139,15 +135,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  let people = Object.entries(arr).forEach(entry => { return entry;});
-  console.log(people);
-
-  // let newArr = Object.values(arr);
-  // console.log(newArr);
-
-
+  let isTrue = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name === character) {
+      const characterArray = Object.values(arr[i]);
+      if(characterArray.length > 3) {
+        isTrue = true;
+      }
+    }
+  }
+  return isTrue;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
