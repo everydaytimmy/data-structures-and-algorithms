@@ -8,7 +8,10 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  // Solution code here...
+  let stepOne = str.split('');
+  console.log(stepOne);
+  let answer = stepOne.slice(str.length - 10);
+  return answer;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,8 +29,10 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let newArray = 
+
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -71,7 +76,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  const columnValues = [];
+  for(let i = 0; i < hoursOpen.length; i += 1) {
+    let total = 0;
+    for (let j = 0; j < stores.length; j += 1) {
+      total += stores[j][i];
+    }
+    columnValues.push(total);
+  }
+  return columnValues;
 
 };
 
