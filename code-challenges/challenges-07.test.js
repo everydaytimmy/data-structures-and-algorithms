@@ -36,7 +36,10 @@ CHALLENGE 2
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index.
 ------------------------------------------------------------------------------------------------ */
 
-const removeThree = (idx, arr) => arr.splice(idx, 3);
+const removeThree = (idx, arr) => {
+  arr.splice(idx, 3);
+  return arr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -44,7 +47,7 @@ CHALLENGE 3
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
-const joinArray = (arr) => arr.join("");
+const joinArray = (arr) => arr.join(' ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -61,7 +64,9 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for(let i = 0; i <= str.length; i +=1) {
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -73,9 +78,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+const wordsToCharList = (arr) => arr.split('');
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,7 +124,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < recipe.ingredients.length; i += 1) {
+    const slicedArray = recipe.ingredients[i].slice(recipe.ingredients[i].indexOf(' ') +1);
+    console.log(slicedArray);
+    const newArray = slicedArray.slice(slicedArray.indexOf(' ') +1);
+    console.log(newArray);
+    result.push(newArray);
+  }
   return result;
 };
 
