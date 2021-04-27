@@ -18,8 +18,11 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
+function transformToLis(obj) {
   // Solution code here...
+  return Object.entries(obj).map((value) => {
+    return `<li>${value[0]}: ${value[1]}</li>`;
+  });
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,9 +37,7 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   let newArray = input.flat();
-  let value = newArray.filter( function(n) {
-    return (n === target);
-  });
+  let value = newArray.filter(n => n === target);
   return value.length;
 };
 
@@ -72,8 +73,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-let stepOne =
-  let firstArray = input.filter( n => !(n%5) );
+  let firstArray = input.filter(n => !(n % 5));
 
   console.log(firstArray);
 };
@@ -154,8 +154,11 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  data.sort((a, b) => (a.height - b.height));
+  return data[0].name;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -170,8 +173,8 @@ Run your tests from the console: jest challenges-10.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return a list of key value pairs inside of li tags', () => {
-    expect(transformToLis({name: 'bob', age: 32})[0]).toStrictEqual(`<li>name: bob</li>`);
-    expect(transformToLis({name: 'bob', age: 32})[1]).toStrictEqual(`<li>age: 32</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[0]).toStrictEqual(`<li>name: bob</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[1]).toStrictEqual(`<li>age: 32</li>`);
     expect(transformToLis({})).toStrictEqual([]);
   });
 });
