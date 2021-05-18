@@ -1,3 +1,3 @@
 # Whiteboard images
 
-![reverse-array](./images/array-reverse.jpg)
+![reverse-array](./array-reverse.jpg)
