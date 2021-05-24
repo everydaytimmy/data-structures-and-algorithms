@@ -32,7 +32,7 @@ class LinkedList:
         while current:
             string.join(current.value)
             current = current.next
-
+ 
         return string
 
 class Node:

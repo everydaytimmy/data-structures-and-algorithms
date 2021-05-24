@@ -39,9 +39,9 @@ def test_head():
 
 def test_to_string():
     list = LinkedList()
-    list.to_insert("{ c } ->")
-    list.to_insert("{ b } ->")
-    list.to_insert("{ a } ->")
+    list.insert("{ c } ->")
+    list.insert("{ b } ->")
+    list.insert("{ a } ->")
     actual = list.__str__()
     expected = "{ a } -> { b } -> { c } -> None"
     assert actual == expected
