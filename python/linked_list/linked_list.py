@@ -44,7 +44,6 @@ class LinkedList:
             string += "{ " + current.data + " } -> "
             current = current.next
         string += 'None'
-
         return string
 
     def inject_b(self, index, value):
