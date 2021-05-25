@@ -84,5 +84,47 @@ def insert_after_value():
     assert actual == expected
 
 
+def test_x_fromend():
+    list = LinkedList()
+    list.append_item('rock')
+    list.append_item('paper')
+    list.append_item('scissors')
+    list.append_item('machinegun')
+    actual = list.x_fromend(2)
+    expected = 'paper'
+    assert actual == expected
 
+def test_x_fromend():
+    list = LinkedList()
+    list.append_item('rock')
+    list.append_item('paper')
+    list.append_item('scissors')
+    list.append_item('machinegun')
+    actual = list.x_fromend(10)
+    expected = 'Exception'
+    assert actual == expected
+
+def test_x_fromend():
+    list = LinkedList()
+    list.append_item('rock')
+    list.append_item('paper')
+    list.append_item('scissors')
+    list.append_item('machinegun')
+    actual = list.x_fromend(0)
+    expected = 'machinegun'
+    assert actual == expected
+
+def test_x_fromend():
+    list = LinkedList()
+    list.append_item('machinegun')
+    actual = list.x_fromend(0)
+    expected = 'machinegun'
+    assert actual == expected
+
+def test_x_fromend():
+    list = LinkedList()
+    list.append_item('machinegun')
+    actual = list.x_fromend(-2)
+    expected = 'Exception'
+    assert actual == expected
 

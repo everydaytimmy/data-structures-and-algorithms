@@ -65,6 +65,19 @@ class LinkedList:
             else:
                 current = current.next
 
+    def x_fromend(self, index):
+        temp = []
+        current = self.head
+        while current:
+            temp.append(current.data)
+            current = current.next
+        temp[::-1]
+        if index > len(temp):
+            return 'Exception'
+        if index < 0:
+            return 'Exception'
+        return temp[index-1]
+
 
 
 class Node:
