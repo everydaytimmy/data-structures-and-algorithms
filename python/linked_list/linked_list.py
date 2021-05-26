@@ -49,12 +49,11 @@ class LinkedList:
     def inject_b(self, index, value):
         current = self.head
         while current:
-            if current.next.value != index:
-                current = current.next
-            else:
+            if current.next.data == index:
                 old_next = current.next
                 current.next = Node(value, old_next)
                 break
+            current = current.next
 
     def inject_a(self, index, value):
         current = self.head
@@ -84,3 +83,10 @@ class Node:
     def __init__(self, data, next=None):
         self.data = data
         self.next = next
+
+        try:
+            current = self.head
+            for _ in range(1, self.length-num):
+                current = current.next
+            return current.value
+        except: print('Something went wrong, please try again')
