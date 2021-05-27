@@ -11,4 +11,9 @@
 
 
 ## Code Challenge8
+### Challenge Summary
+Zip up two seperate linked lists
+
+###  Whiteboard Process
 ![whiteboard 8](./CC8WB.png)
+
