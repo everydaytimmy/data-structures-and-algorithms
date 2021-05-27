@@ -77,6 +77,24 @@ class LinkedList:
             return 'Exception'
         return temp[index-1]
 
+    def zip_list(lista,listb):
+        current_a = lista.head
+        current_b = listb.head
+        while current_a and current_b:
+            old_next_a = current_a.next
+            old_next_b = current_b.next
+
+            current_a.next = current_b
+
+            if current_a != None:
+                current_b.next = old_next_a
+
+                current_a = old_next_a
+                current_b = old_next_b
+            else:
+                break
+        return lista
+
 
 
 class Node:

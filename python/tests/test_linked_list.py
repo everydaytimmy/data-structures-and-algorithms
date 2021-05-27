@@ -141,15 +141,15 @@ def test_x_fromend_neg():
     expected = 'Exception'
     assert actual == expected
 
-# def test_zip():
-#     lista = LinkedList()
-#     listb = LinkedList()
-#     lista.append_item('A')
-#     lista.append_item('B')
-#     listb.append_item('1')
-#     listb.append_item('2')
-#     answer = lista.zip_list(listb)
-#     actual = answer.findall()
-#     expected = ['A', '1', 'B', '2']
-#     assert actual == expected
+def test_zip():
+    lista = LinkedList()
+    listb = LinkedList()
+    lista.append_item('A')
+    lista.append_item('B')
+    listb.append_item('1')
+    listb.append_item('2')
+    answer = lista.zip_list(listb)
+    actual = answer.find_all()
+    expected = ['A', '1', 'B', '2']
+    assert actual == expected
 
