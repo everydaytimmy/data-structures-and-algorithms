@@ -57,3 +57,21 @@ class Node:
     def __init__(self, value, next = None):
         self.value = value
         self.next = next
+
+
+
+def qlike_pop(self):
+        prev = None
+        current = self.top
+        while(current is not None):
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.top = prev
+
+        if not self.top:
+            raise InvalidOperationError("Method not allowed on empty collection")
+        value = self.top.value
+        self.top = self.top.next
+        return value
