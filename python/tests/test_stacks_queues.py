@@ -55,6 +55,17 @@ def test_peek():
     expected = 'Jim'
     assert actual == expected
 
+def test_peek():
+    stack = Stack()
+    stack.push('Dwight')
+    stack.push('Michael')
+    stack.push('Jim')
+    stack.push('Andy')
+    stack.peek()
+    actual = stack.top.value
+    expected = 'Andy'
+    assert actual == expected
+
 def test_empty_stack():
     stack = Stack()
     assert stack.is_empty()

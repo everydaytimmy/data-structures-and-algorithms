@@ -17,3 +17,8 @@ Zip up two seperate linked lists
 ###  Whiteboard Process
 ![whiteboard 8](./CC8WB.png)
 
+# Stacks and Queues
+Create stacks and queues
+
+## Challenge
+Create code to push, pop, peek, enquue, and dequeue
