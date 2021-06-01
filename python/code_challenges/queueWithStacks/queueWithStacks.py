@@ -26,6 +26,7 @@ class Stack:
         self.top = prev
         value = self.top.value
         self.top = self.top.next
+        
         return value
 
 
