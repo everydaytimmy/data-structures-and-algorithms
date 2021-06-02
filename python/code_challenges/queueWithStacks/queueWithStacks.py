@@ -2,18 +2,16 @@ class Stack:
     def __init__(self):
         self.top = None
 
-    def enqueue(self, value):
+    def push(self, value):
         self.top = Node (value, self.top)
 
-    def reverse(self):
-        prev = None
-        current = self.top
-        while(current is not None):
-            next = current.next
-            current.next = prev
-            prev = current
-            current = next
-        self.top = prev
+    def pop(self):
+        value = self.top.value
+        self.top = self.top.next
+        return value
+
+    def enqueue(self, value):
+        self.top = Node (value, self.top)
 
     def dequeue(self):
         prev = None
@@ -26,7 +24,7 @@ class Stack:
         self.top = prev
         value = self.top.value
         self.top = self.top.next
-        
+
         return value
 
 
