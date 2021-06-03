@@ -16,6 +16,7 @@ Zip up two seperate linked lists
 
 ###  Whiteboard Process
 ![whiteboard 8](./CC8WB.png)
+(resubmit)
 
 # Stacks and Queues
 Create stacks and queues
