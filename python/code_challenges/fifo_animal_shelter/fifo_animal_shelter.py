@@ -1,58 +1,45 @@
-from code_challenges.stacks_and_queues.invalid_error import InvalidOperationError
+from collections import deque
+
+class Queue(deque):
+
+    def enqueue(self, value):
+        self.append(value)
+
+    def dequeue(self):
+        return self.popleft()
+
+    def is_empty(self):
+        return len(self) == 0
+
+    def peek(self):
+        return [0]
 
 class AnimalShelter:
     def __init__(self):
-        self.shelter = Queue()
+        self.cats = Queue()
+        self.dogs = Queue()
 
     def enqueue(self, animal):
-        self.shelter.enqueue(animal)
-
-    def dequeue(self, animal):
-        self.shelter.dequeue(animal)
-
-
-class Queue:
-    def __init__(self):
-        self.front = None
-        self.rear = None
-
-    def enqueue(self, value):
-        if self.rear:
-            self.rear.next = Node(value)
-            self.rear = self.rear.next
+        if isinstance(animal, Dog):
+            self.dogs.enqueue(animal)
         else:
-            self.rear = Node(value)
-            self.front = self.rear
+            self.cats.enqueue(animal)
 
-    def dequeue(self, animal):
-        if not self.front:
-            raise InvalidOperationError("Method not allow on empty collection")
-        current = self.front
-        if animal == current.value:
-            old_front = self.front
-            self.front = self.front.next
-            old_front.next = None
-            return old_front
+    def dequeue(self, pref):
+        if pref == "dog" and self.dogs:
+            return self.dogs.dequeue()
 
-        while animal != current.value:
-            lookback = current
-            current = current.next
+        if pref == "cat" and self.cats:
+            return self.cats.dequeue()
 
-        lookback.next = current.next
-        current = None
-        return current.value
+        return None
 
-class Node:
-    def __init__(self, value, next = None):
-        self.value = value
-        self.next = next
+
 
 class Cat:
-    def __init__(self, value = 'cat'):
-        self.value = value
+    pass
 
 class Dog:
-    def __init__(self, value = 'dog'):
-        self.value = value
+    pass
 
 
