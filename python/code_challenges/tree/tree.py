@@ -38,7 +38,51 @@ class BinarySearchTree(BinaryTree):
         walk(self.root, node)
 
     def contains(self, value):
-        pass
+        def walk(root, value):
+            if not root:
+                return False
+
+            return (root.value == value or walk(root.left, value) or walk(root.right, value))
+
+        return walk(self.root, value)
+
+    def pre_order(self):
+        def walk(root, collection):
+            if not root:
+                return
+
+            collection.append(root.value)
+            walk(root.left, collection)
+            walk(root.right, collection)
+
+        collected_values = []
+        walk(self.root, collected_values)
+        return collected_values
 
 
+    def in_order(self):
+        def walk(root, collection):
+            if not root:
+                return
+
+            walk(root.left, collection)
+            collection.append(root.value)
+            walk(root.right, collection)
+
+        collected_values = []
+        walk(self.root, collected_values)
+        return collected_values
+
+    def post_order(self):
+        def walk(root, collection):
+            if not root:
+                return
+
+            walk(root.left, collection)
+            walk(root.right, collection)
+            collection.append(root.value)
+
+        collected_values = []
+        walk(self.root, collected_values)
+        return collected_values
 

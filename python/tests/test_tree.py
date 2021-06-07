@@ -102,7 +102,6 @@ def test_bst_contains():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
 def test_pre_order():
     tree = BinarySearchTree()
     tree.add(50)
@@ -123,7 +122,6 @@ def test_pre_order():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
 def test_in_order():
     tree = BinarySearchTree()
     tree.add(50)
@@ -144,7 +142,6 @@ def test_in_order():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
 def test_post_order():
     tree = BinarySearchTree()
     tree.add(50)
