@@ -2,30 +2,12 @@
 class Node:
     def __init__(self, value):
         self.value = value
-        self.left = None
-        self.right = None
+        self.children = []
 
-class BinaryTree:
+
+class Ktree():
     def __init__(self):
         self.root = None
-
-    def add(self, value):
-        if not self.root:
-            self.root = Node(value)
-            return
-
-        def walk(root):
-            if not root:
-                return
-            if not root.left:
-                root.left = Node(value)
-                return
-            if root.left and not root.right:
-                root.right = Node(value)
-                return
-            walk(root.left)
-            walk(root.right)
-        walk(self.root)
 
     @staticmethod
     def breadth(tree = None):
@@ -45,6 +27,31 @@ class BinaryTree:
                 queue.enqueue(node.right)
 
         return list
+
+def fizz_buzz(tree):
+
+    queue = Queue()
+    queue.enqueue(tree.root)
+    new_tree = KTree()
+
+    while queue.peek():
+        node = queue.dequeue()
+        new_value = fizzify(node)
+        new_node = Node(new_value)
+        for child in node.children:
+            queue.enqueue(child)
+
+
+
+def fizzify(value):
+    if value % 3 == 0 or value % 5 == 0:
+        return "fizzbuzz"
+    if value % 3 == 0:
+        return "fizz"
+    if value % 5 == 0:
+        return "buzz"
+    else:
+        return str(value)
 
 class Queue:
     def __init__ (self):
@@ -76,5 +83,3 @@ class QNode:
     def __init__(self, value, next = None):
         self.value = value
         self.next = next
-
-
