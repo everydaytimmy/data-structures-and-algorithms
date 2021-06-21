@@ -63,12 +63,12 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key
     return arr
+
+
 ```
 
+#### Space and Time Complexity:
 
+**Time:** This would be 0(n^2) becasue worst case it has to run the length of the array twice.
 
-
-
-
-
-
+**Space:** O(1) because this is happening in place
