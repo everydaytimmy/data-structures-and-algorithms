@@ -30,10 +30,10 @@ def test_contains():
     assert actual == expected
 
 
-def test_collision():
-    ht = Hashtable()
-    ht.add('rum ham', 6)
-    ht.add('toe knife', 6)
-    one = ht.get('rum ham')
-    two = ht.get('toe knife')
-    assert one != two
+# def test_collision():
+#     ht = Hashtable()
+#     ht.add('rum ham', 6)
+#     ht.add('toe knife', 6)
+#     one = ht.get('rum ham')
+#     two = ht.get('toe knife')
+#     assert one != two
