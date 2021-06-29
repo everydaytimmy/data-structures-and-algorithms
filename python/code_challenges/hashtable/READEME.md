@@ -13,6 +13,6 @@ add() - This function's signature takes in two arguments (key, value) and has re
 
 get() - This function's signature is to take in one argument (key) and return the value associated with that key. It calls the hash function and then looks for the value at that key index. If none exists None is returned. If there is an existing linked list the function will traverse until it locates the appropriate key/value. If none exists None will be returned.
 
-contains() This function's siganture is one argument(key) and returns True or False depensing if the hashable contans the passed in argument or now. 
+contains() This function's siganture is one argument(key) and returns True or False depensing if the hashable contans the passed in argument or now.
 
 hash() This function's siganture is one argument(key) and the return is a generated index number.
