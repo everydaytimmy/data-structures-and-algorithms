@@ -1,4 +1,4 @@
-from code_challenges.tree.tree import Node, BinaryTree, BinarySearchTree
+from code_challenges.tree.tree import BinarySearchTree
 
 
 def tree_intersection(tree1, tree2):
@@ -8,5 +8,5 @@ def tree_intersection(tree1, tree2):
     for i in list1:
         if tree2.contains(i):
             answer_key.append(i)
-            
+
     return answer_key
