@@ -2,6 +2,28 @@ class LinkedList:
     def __init__(self, head=None):
         self.head = head
 
+    def __iter__(self):
+        def value_generator():
+            current = self.head
+            while current:
+                    yield current.value
+                    current= current.next
+            return value_generator()
+
+    def __str__(self):
+        out = ""
+
+        for value in self:
+            out += f"[ {value} ] ->"
+
+        return out + "None"
+
+    def __len__(self):
+        return len(list(iter(self)))
+
+    def __eq__(self, other):
+        return list(self) == list(other)
+
     def insert(self, data):
         self.head = Node(data, self.head)
 
